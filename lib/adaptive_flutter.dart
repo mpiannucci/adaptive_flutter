@@ -1,7 +1,5 @@
 library adaptive_flutter;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/adaptive_nav_bar.dart';
+export 'src/adaptive_sliver_nav_bar.dart';
+export 'src/adaptive_bottom_nav_bar.dart';
