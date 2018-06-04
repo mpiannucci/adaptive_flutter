@@ -26,6 +26,7 @@ class AdaptiveBottomNavBar extends StatelessWidget {
       items: this.items,
       currentIndex: this.currentIndex,
       onTap: this.onTap,
+      type: BottomNavigationBarType.fixed
     );
   }
 }
