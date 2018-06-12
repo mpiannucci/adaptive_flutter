@@ -22,6 +22,6 @@ abstract class BaseNavBar extends StatelessWidget {
     } if (this.actions.length < 2 && this.useLeadingAction) {
       return null;
     }
-    return this.useLeadingAction ? this.actions[1] : this.actions[2];
+    return this.useLeadingAction ? this.actions[1] : this.actions[0];
   }
 }
