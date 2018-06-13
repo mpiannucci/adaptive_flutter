@@ -3,14 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:adaptive_flutter/src/base_nav_bar.dart';
 
 class AdaptiveSliverNavBar extends BaseNavBar {
-  final bool largeTitle;
+  final Widget flexibleSpace;
   final bool pinned;
 
   AdaptiveSliverNavBar(
       {Widget title,
       List<Widget> actions,
       bool useLeadingAction,
-      this.largeTitle = true,
+      this.flexibleSpace,
       this.pinned = true})
       : super(title, actions, useLeadingAction);
 
@@ -20,12 +20,13 @@ class AdaptiveSliverNavBar extends BaseNavBar {
         ? CupertinoSliverNavigationBar(
             leading: buildLeadingAction(),
             trailing: buildTrailingAction(),
-            largeTitle: this.largeTitle ? this.title : null,
-            middle: this.largeTitle ? null : this.title,
+            largeTitle: this.flexibleSpace,
+            middle: this.title,
             backgroundColor: Theme.of(context).primaryColor,
           )
         : SliverAppBar(
             pinned: this.pinned,
+            flexibleSpace: this.flexibleSpace,
             floating: false,
             title: this.title,
             actions: this.actions);
